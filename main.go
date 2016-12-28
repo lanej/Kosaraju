@@ -63,7 +63,7 @@ func (g *Graph) finishingTimes() []int {
 				finishingTime[vertex] = timing
 				stack.Pop()
 			} else {
-				// Add unexplored arcs to the stack on top of the current top
+				// Add unexplored arcs to the stack *over* the current top
 				for _, v := range unexploredArcs {
 					stack.Push(v)
 				}
