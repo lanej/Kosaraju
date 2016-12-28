@@ -157,31 +157,9 @@ func (g *Graph) reverse() *Graph {
 	return &Graph{List: grev}
 }
 
-func (g *Graph) clone() *Graph {
-	newList := make(map[int][]int)
-	for key, val := range g.List {
-		newList[key] = val
-	}
-	return &Graph{List: newList}
-}
-
 func (g *Graph) print(name string) {
 	fmt.Printf("Graph: %s\n", name)
 	for key := range g.List {
 		fmt.Printf("%v - %v\n", key, g.List[key])
 	}
-}
-
-func nChooseK(n, k uint64) uint64 {
-	return factorial(n) / (factorial(k) * factorial(n-k))
-}
-
-func factorial(x uint64) uint64 {
-	var result uint64
-	if x < 1 {
-		result = 1
-	} else {
-		result = x * factorial(x-1)
-	}
-	return result
 }
